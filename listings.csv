@@ -1,0 +1,101 @@
+listing_id,name,location,price_per_night,bedrooms,rating,reviews_count,host_name,amenities,property_type,availability
+1,Bright House in Tofino,"Tofino, BC",139,4,4.5,250,Annie Bouchard,"Fireplace, City View, Pool, Balcony, AC, Compost Toilet",House,Available
+2,Spacious Tiny House in Magog,"Magog, QC",224,5,4.9,214,Jean-Pierre M,"Hot Tub, Solar Power, City View",Tiny House,Booked
+3,Modern House in Whistler,"Whistler, BC",305,5,4.2,87,Emily Roy,"Garden, Solar Power, BBQ, Rooftop Pool",House,Booked
+4,Bright House in Sutton,"Sutton, QC",362,5,5.0,200,Hugo Roy,"Ocean View, Garden, Gym, Balcony, AC",House,Available
+5,Elegant Apartment in Whistler,"Whistler, BC",256,5,4.2,126,Annie Dupont,"Hot Tub, City View, Compost Toilet",Apartment,Available
+6,Bright Farmhouse in Whistler,"Whistler, BC",161,1,4.2,250,Annie Fadel,"City View, Rooftop Pool, Garden",Farmhouse,Booked
+7,Charming House in Montreal,"Montreal, QC",213,1,4.6,189,David Fadel,"Rooftop Pool, Pool, Kitchen, Ocean View, Compost Toilet, Hot Tub",House,Booked
+8,Trendy House in Tofino,"Tofino, BC",265,4,4.5,204,Noura Zahid,"Lake Access, Gym, Hot Tub",House,Booked
+9,Modern Chalet in Magog,"Magog, QC",178,5,4.7,46,Emily Lee,"Compost Toilet, Lake Access, Pet-Friendly, Gym, BBQ",Chalet,Booked
+10,Cozy Apartment in Sutton,"Sutton, QC",207,3,4.3,149,Hugo Zahid,"BBQ, Ocean View, City View",Apartment,Available
+11,Trendy Apartment in Tofino,"Tofino, BC",176,3,4.6,69,Claire Tremblay,"Compost Toilet, WiFi, Pool, City View, Rooftop Pool, Hot Tub",Apartment,Available
+12,Elegant House in Tofino,"Tofino, BC",285,5,4.3,146,Jean-Pierre M,"Rooftop Pool, Hot Tub, Kitchen",House,Booked
+13,Modern Penthouse in Montreal,"Montreal, QC",217,2,4.3,150,Annie Roy,"Lake Access, Gym, Kitchen",Penthouse,Booked
+14,Luxury Condo in Niagara Falls,"Niagara Falls, ON",237,1,4.5,130,Noura Zahid,"Hot Tub, BBQ, WiFi",Condo,Available
+15,Cozy Bungalow in Whistler,"Whistler, BC",174,5,4.5,126,David M,"Pet-Friendly, Kitchen, Gym, Hot Tub, City View",Bungalow,Available
+16,Elegant Bungalow in Montreal,"Montreal, QC",82,4,4.5,29,Hugo Lee,"Solar Power, Rooftop Pool, BBQ, Lake Access, Garden, Ocean View",Bungalow,Available
+17,Charming Bungalow in Vancouver,"Vancouver, BC",133,2,4.8,210,Annie M,"Garden, WiFi, Hot Tub",Bungalow,Available
+18,Luxury House in Niagara Falls,"Niagara Falls, ON",195,2,4.4,25,Annie Dupont,"Lake Access, Hot Tub, WiFi",House,Available
+19,Luxury Studio in Niagara Falls,"Niagara Falls, ON",124,1,4.9,41,David M,"Hot Tub, Balcony, Kitchen, Gym",Studio,Available
+20,Charming Tiny House in Montreal,"Montreal, QC",262,1,4.4,217,Claire Fadel,"Balcony, AC, WiFi, Compost Toilet, Ocean View, Lake Access",Tiny House,Booked
+21,Bright Apartment in Sutton,"Sutton, QC",390,3,4.6,176,Emily M,"AC, Hot Tub, Balcony, City View, WiFi",Apartment,Booked
+22,Luxury House in Montreal,"Montreal, QC",359,1,5.0,69,Emily Roy,"WiFi, Kitchen, Pool, Fireplace, City View, Solar Power",House,Booked
+23,Spacious Chalet in Montreal,"Montreal, QC",226,4,4.5,54,Rachel Lee,"Lake Access, Rooftop Pool, Compost Toilet",Chalet,Booked
+24,Trendy Apartment in Magog,"Magog, QC",384,3,4.9,75,Sophie Adams,"City View, Gym, Balcony",Apartment,Booked
+25,Cozy Condo in Quebec City,"Quebec City, QC",380,1,4.4,186,Emily Adams,"Pet-Friendly, Compost Toilet, Kitchen, Garden",Condo,Available
+26,Rustic Apartment in Mont-Tremblant,"Mont-Tremblant, QC",289,2,4.7,183,Omar Tremblay,"Pool, Kitchen, City View, Ocean View",Apartment,Available
+27,Trendy Farmhouse in Mont-Tremblant,"Mont-Tremblant, QC",277,1,4.3,132,Emily Bouchard,"Ocean View, Balcony, Pet-Friendly",Farmhouse,Booked
+28,Modern Studio in Sutton,"Sutton, QC",119,5,4.9,173,Hugo Bouchard,"Rooftop Pool, Solar Power, Compost Toilet, Pet-Friendly, WiFi",Studio,Booked
+29,Cozy Tiny House in Tofino,"Tofino, BC",251,4,4.5,224,Noura Carter,"Garden, City View, Ocean View, Pool, Hot Tub, Fireplace",Tiny House,Available
+30,Spacious Studio in Mont-Tremblant,"Mont-Tremblant, QC",345,3,4.2,214,Annie Roy,"Gym, Ocean View, Pet-Friendly, AC, BBQ",Studio,Available
+31,Rustic House in Sutton,"Sutton, QC",317,2,4.3,179,Annie Roy,"Ocean View, Pet-Friendly, Garden, City View, Kitchen",House,Available
+32,Cozy Tiny House in Montreal,"Montreal, QC",222,3,4.4,89,Sophie Roy,"WiFi, AC, Compost Toilet, Gym, Rooftop Pool",Tiny House,Booked
+33,Spacious Chalet in Whistler,"Whistler, BC",181,1,4.4,24,Hugo Tremblay,"AC, Pet-Friendly, Balcony",Chalet,Booked
+34,Cozy Penthouse in Quebec City,"Quebec City, QC",112,4,4.4,192,Jean-Pierre Roy,"City View, Solar Power, Hot Tub, AC, Ocean View",Penthouse,Booked
+35,Elegant Tiny House in Toronto,"Toronto, ON",149,3,4.7,250,Hugo Carter,"Kitchen, BBQ, Compost Toilet, Fireplace",Tiny House,Booked
+36,Elegant Bungalow in Quebec City,"Quebec City, QC",127,3,4.9,235,Sophie Adams,"Pool, Ocean View, Garden, Balcony",Bungalow,Booked
+37,Elegant Cabin in Quebec City,"Quebec City, QC",330,4,4.7,210,Hugo Carter,"AC, Hot Tub, Compost Toilet, Rooftop Pool, Kitchen",Cabin,Booked
+38,Charming Farmhouse in Montreal,"Montreal, QC",203,1,4.4,244,Sophie Fadel,"Pool, Hot Tub, Gym",Farmhouse,Booked
+39,Charming Cabin in Whistler,"Whistler, BC",89,4,4.7,99,Emily Zahid,"BBQ, Kitchen, Ocean View, City View, Solar Power",Cabin,Booked
+40,Bright Chalet in Tofino,"Tofino, BC",147,2,4.7,241,Claire Zahid,"Compost Toilet, Ocean View, Fireplace, Pet-Friendly, Kitchen",Chalet,Booked
+41,Cozy Studio in Whistler,"Whistler, BC",353,5,4.8,163,Noura Dupont,"Balcony, Pool, Pet-Friendly",Studio,Available
+42,Modern Tiny House in Toronto,"Toronto, ON",368,1,4.9,38,Rachel Zahid,"Hot Tub, Garden, Lake Access, Solar Power, WiFi, Fireplace",Tiny House,Booked
+43,Cozy Bungalow in Mont-Tremblant,"Mont-Tremblant, QC",389,5,4.7,65,Noura Roy,"Ocean View, Lake Access, Rooftop Pool, Garden, Hot Tub",Bungalow,Available
+44,Luxury House in Whistler,"Whistler, BC",220,3,4.5,140,Sophie Fadel,"Gym, BBQ, Kitchen, City View, Rooftop Pool",House,Booked
+45,Trendy Condo in Mont-Tremblant,"Mont-Tremblant, QC",144,5,4.7,193,Noura M,"Hot Tub, City View, WiFi, Compost Toilet, Balcony, Lake Access",Condo,Booked
+46,Bright Condo in Vancouver,"Vancouver, BC",209,4,4.9,139,David Bouchard,"Pool, Hot Tub, Garden, Ocean View, BBQ, AC",Condo,Available
+47,Modern Bungalow in Tofino,"Tofino, BC",131,4,4.6,179,Omar Adams,"Ocean View, Lake Access, Solar Power",Bungalow,Booked
+48,Quiet Chalet in Tofino,"Tofino, BC",251,1,4.3,181,Noura Dupont,"Compost Toilet, Solar Power, BBQ, Kitchen",Chalet,Available
+49,Bright Condo in Toronto,"Toronto, ON",127,1,4.8,22,Sophie Tremblay,"City View, Compost Toilet, Pet-Friendly, Garden, Ocean View, Solar Power",Condo,Booked
+50,Quiet Apartment in Magog,"Magog, QC",220,1,4.7,27,Claire Carter,"Pet-Friendly, Solar Power, Hot Tub",Apartment,Available
+51,Spacious Penthouse in Vancouver,"Vancouver, BC",348,5,5.0,102,David M,"Pool, WiFi, AC",Penthouse,Booked
+52,Elegant Condo in Whistler,"Whistler, BC",188,1,4.8,151,Jean-Pierre Fadel,"Pool, Lake Access, City View, Garden, Rooftop Pool, Solar Power",Condo,Booked
+53,Cozy Tiny House in Whistler,"Whistler, BC",383,3,4.7,72,Rachel Bouchard,"Garden, Pet-Friendly, Ocean View, Pool",Tiny House,Booked
+54,Modern Studio in Magog,"Magog, QC",361,5,5.0,38,Rachel Roy,"Compost Toilet, AC, Rooftop Pool, Solar Power, Kitchen",Studio,Booked
+55,Bright Penthouse in Montreal,"Montreal, QC",198,2,4.7,211,Annie Adams,"Rooftop Pool, Balcony, WiFi, Pool, Solar Power",Penthouse,Booked
+56,Rustic Tiny House in Magog,"Magog, QC",342,1,4.6,80,Noura Fadel,"Hot Tub, Rooftop Pool, Kitchen, Solar Power",Tiny House,Booked
+57,Spacious Studio in Tofino,"Tofino, BC",247,3,4.5,216,Omar Zahid,"AC, City View, Ocean View, WiFi, Pet-Friendly",Studio,Booked
+58,Modern Studio in Montreal,"Montreal, QC",195,3,4.9,85,Hugo Roy,"Pet-Friendly, Kitchen, AC, Solar Power, Rooftop Pool",Studio,Booked
+59,Spacious Cabin in Vancouver,"Vancouver, BC",342,1,4.5,116,Claire Bouchard,"Kitchen, AC, BBQ, Balcony, City View, WiFi",Cabin,Available
+60,Trendy Apartment in Montreal,"Montreal, QC",222,2,4.6,160,Claire Tremblay,"Compost Toilet, Pet-Friendly, Ocean View, Hot Tub",Apartment,Booked
+61,Bright Farmhouse in Whistler,"Whistler, BC",272,3,4.9,86,Omar Lee,"City View, AC, Pool, BBQ",Farmhouse,Booked
+62,Bright Studio in Magog,"Magog, QC",320,2,4.3,40,Hugo Fadel,"AC, Kitchen, WiFi, BBQ, Pet-Friendly, Lake Access",Studio,Available
+63,Cozy Apartment in Quebec City,"Quebec City, QC",282,5,4.5,232,Omar Tremblay,"AC, Balcony, Lake Access, Compost Toilet",Apartment,Booked
+64,Spacious Penthouse in Quebec City,"Quebec City, QC",198,2,4.4,37,Claire Zahid,"AC, Pool, Fireplace",Penthouse,Booked
+65,Spacious Cabin in Magog,"Magog, QC",320,3,4.9,130,Jean-Pierre Bouchard,"Balcony, Garden, Lake Access, Rooftop Pool, BBQ",Cabin,Booked
+66,Rustic Cabin in Sutton,"Sutton, QC",84,3,4.3,247,Emily Carter,"Pool, Solar Power, Fireplace",Cabin,Booked
+67,Bright House in Niagara Falls,"Niagara Falls, ON",350,2,4.4,154,Rachel Zahid,"Pet-Friendly, AC, City View, Garden, Gym, Hot Tub",House,Available
+68,Cozy Penthouse in Toronto,"Toronto, ON",136,4,4.5,67,David Bouchard,"Hot Tub, Balcony, Gym, Kitchen",Penthouse,Booked
+69,Charming Tiny House in Tofino,"Tofino, BC",240,1,4.3,141,Emily Adams,"Gym, BBQ, Balcony, City View, Solar Power",Tiny House,Booked
+70,Cozy Condo in Whistler,"Whistler, BC",300,4,4.7,54,Claire Fadel,"Pet-Friendly, Lake Access, Fireplace, WiFi",Condo,Booked
+71,Rustic Tiny House in Montreal,"Montreal, QC",92,1,4.5,218,Sophie Lee,"Solar Power, City View, Fireplace",Tiny House,Booked
+72,Quiet House in Tofino,"Tofino, BC",197,4,4.5,48,David Roy,"City View, AC, Hot Tub",House,Booked
+73,Cozy Farmhouse in Magog,"Magog, QC",241,3,4.3,99,Emily Dupont,"Hot Tub, WiFi, Ocean View, City View",Farmhouse,Available
+74,Charming Penthouse in Montreal,"Montreal, QC",327,2,4.7,243,Noura Lee,"WiFi, Balcony, Fireplace",Penthouse,Booked
+75,Charming Apartment in Montreal,"Montreal, QC",376,2,4.8,236,Rachel Tremblay,"Ocean View, WiFi, Pet-Friendly, Pool, Hot Tub, Rooftop Pool",Apartment,Booked
+76,Bright Tiny House in Montreal,"Montreal, QC",331,3,4.3,193,Rachel M,"City View, WiFi, Ocean View, Compost Toilet, Rooftop Pool",Tiny House,Booked
+77,Trendy Chalet in Whistler,"Whistler, BC",263,3,4.5,220,Hugo Zahid,"Kitchen, Ocean View, Balcony, Compost Toilet, AC",Chalet,Booked
+78,Trendy Condo in Niagara Falls,"Niagara Falls, ON",116,5,4.8,117,Claire Dupont,"Fireplace, Ocean View, Pet-Friendly, Gym, Solar Power, Kitchen",Condo,Available
+79,Quiet House in Whistler,"Whistler, BC",321,2,4.3,64,Sophie M,"AC, Balcony, Pool",House,Booked
+80,Modern Bungalow in Tofino,"Tofino, BC",102,5,4.3,219,Noura Roy,"City View, BBQ, WiFi, Rooftop Pool",Bungalow,Booked
+81,Luxury Studio in Mont-Tremblant,"Mont-Tremblant, QC",246,4,4.9,123,David Bouchard,"Solar Power, Ocean View, WiFi, AC, BBQ, Gym",Studio,Booked
+82,Bright Penthouse in Tofino,"Tofino, BC",163,3,4.7,128,Noura Fadel,"Gym, Rooftop Pool, City View",Penthouse,Available
+83,Bright Condo in Mont-Tremblant,"Mont-Tremblant, QC",174,4,4.9,204,Hugo Fadel,"Fireplace, WiFi, Ocean View, Balcony, City View, AC",Condo,Available
+84,Charming Condo in Quebec City,"Quebec City, QC",84,5,4.7,208,David Carter,"Balcony, AC, Fireplace, Gym, Compost Toilet, Kitchen",Condo,Available
+85,Luxury Apartment in Whistler,"Whistler, BC",348,5,4.3,129,Noura Roy,"Solar Power, Garden, Pet-Friendly, Rooftop Pool, City View, Fireplace",Apartment,Available
+86,Rustic Apartment in Niagara Falls,"Niagara Falls, ON",303,4,4.7,117,Hugo Zahid,"Kitchen, Fireplace, City View, Balcony",Apartment,Available
+87,Spacious Apartment in Tofino,"Tofino, BC",254,2,4.5,160,David Tremblay,"Rooftop Pool, Gym, Hot Tub",Apartment,Available
+88,Charming Apartment in Niagara Falls,"Niagara Falls, ON",202,2,4.4,103,Omar Tremblay,"Lake Access, WiFi, Gym, BBQ, Kitchen",Apartment,Booked
+89,Charming Condo in Mont-Tremblant,"Mont-Tremblant, QC",116,4,4.4,150,Hugo Zahid,"Fireplace, WiFi, Garden, AC",Condo,Booked
+90,Luxury Studio in Mont-Tremblant,"Mont-Tremblant, QC",321,2,4.6,188,Jean-Pierre Adams,"Fireplace, Balcony, BBQ, Garden, Hot Tub, Solar Power",Studio,Available
+91,Elegant Condo in Tofino,"Tofino, BC",229,1,4.8,98,Sophie Roy,"Hot Tub, BBQ, Pool, City View, Balcony, Pet-Friendly",Condo,Available
+92,Rustic Apartment in Mont-Tremblant,"Mont-Tremblant, QC",398,4,4.5,73,Emily Roy,"Hot Tub, Solar Power, Compost Toilet",Apartment,Booked
+93,Luxury Apartment in Quebec City,"Quebec City, QC",166,4,4.4,177,Sophie Dupont,"BBQ, Gym, Fireplace",Apartment,Available
+94,Rustic Tiny House in Sutton,"Sutton, QC",80,1,4.6,220,Noura Bouchard,"Solar Power, Hot Tub, Garden",Tiny House,Booked
+95,Luxury Bungalow in Magog,"Magog, QC",261,2,4.4,90,Noura Roy,"WiFi, Hot Tub, Solar Power, Fireplace, City View",Bungalow,Available
+96,Cozy Tiny House in Niagara Falls,"Niagara Falls, ON",90,1,4.7,222,Sophie Carter,"City View, Pool, Pet-Friendly, Fireplace, Hot Tub, Balcony",Tiny House,Booked
+97,Modern Penthouse in Tofino,"Tofino, BC",155,5,4.4,85,Noura Adams,"AC, City View, Fireplace, Pet-Friendly",Penthouse,Available
+98,Charming House in Magog,"Magog, QC",317,4,4.2,85,Emily Zahid,"Ocean View, Kitchen, Fireplace",House,Booked
+99,Elegant Tiny House in Vancouver,"Vancouver, BC",96,2,4.3,201,Annie Carter,"Fireplace, Balcony, AC, Compost Toilet",Tiny House,Available
+100,Bright Cabin in Quebec City,"Quebec City, QC",253,4,4.4,71,Hugo Zahid,"BBQ, Pool, Fireplace",Cabin,Available
