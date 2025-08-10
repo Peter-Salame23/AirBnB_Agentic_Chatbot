@@ -1,0 +1,6 @@
+streamlit
+streamlit-authenticator
+pandas
+numpy
+scikit-learn
+python-dotenv

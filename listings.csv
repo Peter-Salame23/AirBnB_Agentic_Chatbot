@@ -14,15 +14,15 @@ listing_id,name,location,price_per_night,bedrooms,rating,reviews_count,host_name
 13,Modern Penthouse in Montreal,"Montreal, QC",217,2,4.3,150,Annie Roy,"Lake Access, Gym, Kitchen",Penthouse,Booked
 14,Luxury Condo in Niagara Falls,"Niagara Falls, ON",237,1,4.5,130,Noura Zahid,"Hot Tub, BBQ, WiFi",Condo,Available
 15,Cozy Bungalow in Whistler,"Whistler, BC",174,5,4.5,126,David M,"Pet-Friendly, Kitchen, Gym, Hot Tub, City View",Bungalow,Available
-16,Elegant Bungalow in Montreal,"Montreal, QC",82,4,4.5,29,Hugo Lee,"Solar Power, Rooftop Pool, BBQ, Lake Access, Garden, Ocean View",Bungalow,Available
+16,Elegant Bungalow in Montreal,"Montreal, QC",82,4,4.5,29,Hugo Lee,"Solar Power, Rooftop Pool, BBQ, Lake Access, Garden, Ocean View",Bungalow,Booked
 17,Charming Bungalow in Vancouver,"Vancouver, BC",133,2,4.8,210,Annie M,"Garden, WiFi, Hot Tub",Bungalow,Available
 18,Luxury House in Niagara Falls,"Niagara Falls, ON",195,2,4.4,25,Annie Dupont,"Lake Access, Hot Tub, WiFi",House,Available
 19,Luxury Studio in Niagara Falls,"Niagara Falls, ON",124,1,4.9,41,David M,"Hot Tub, Balcony, Kitchen, Gym",Studio,Available
 20,Charming Tiny House in Montreal,"Montreal, QC",262,1,4.4,217,Claire Fadel,"Balcony, AC, WiFi, Compost Toilet, Ocean View, Lake Access",Tiny House,Booked
-21,Bright Apartment in Sutton,"Sutton, QC",390,3,4.6,176,Emily M,"AC, Hot Tub, Balcony, City View, WiFi",Apartment,Booked
+21,Bright Apartment in Sutton,"Sutton, QC",390,3,4.6,176,Emily M,"AC, Hot Tub, Balcony, City View, WiFi",Apartment,Available
 22,Luxury House in Montreal,"Montreal, QC",359,1,5.0,69,Emily Roy,"WiFi, Kitchen, Pool, Fireplace, City View, Solar Power",House,Booked
 23,Spacious Chalet in Montreal,"Montreal, QC",226,4,4.5,54,Rachel Lee,"Lake Access, Rooftop Pool, Compost Toilet",Chalet,Booked
-24,Trendy Apartment in Magog,"Magog, QC",384,3,4.9,75,Sophie Adams,"City View, Gym, Balcony",Apartment,Booked
+24,Trendy Apartment in Magog,"Magog, QC",384,3,4.9,75,Sophie Adams,"City View, Gym, Balcony",Apartment,BookAvailableed
 25,Cozy Condo in Quebec City,"Quebec City, QC",380,1,4.4,186,Emily Adams,"Pet-Friendly, Compost Toilet, Kitchen, Garden",Condo,Available
 26,Rustic Apartment in Mont-Tremblant,"Mont-Tremblant, QC",289,2,4.7,183,Omar Tremblay,"Pool, Kitchen, City View, Ocean View",Apartment,Available
 27,Trendy Farmhouse in Mont-Tremblant,"Mont-Tremblant, QC",277,1,4.3,132,Emily Bouchard,"Ocean View, Balcony, Pet-Friendly",Farmhouse,Booked
@@ -48,7 +48,7 @@ listing_id,name,location,price_per_night,bedrooms,rating,reviews_count,host_name
 47,Modern Bungalow in Tofino,"Tofino, BC",131,4,4.6,179,Omar Adams,"Ocean View, Lake Access, Solar Power",Bungalow,Booked
 48,Quiet Chalet in Tofino,"Tofino, BC",251,1,4.3,181,Noura Dupont,"Compost Toilet, Solar Power, BBQ, Kitchen",Chalet,Available
 49,Bright Condo in Toronto,"Toronto, ON",127,1,4.8,22,Sophie Tremblay,"City View, Compost Toilet, Pet-Friendly, Garden, Ocean View, Solar Power",Condo,Booked
-50,Quiet Apartment in Magog,"Magog, QC",220,1,4.7,27,Claire Carter,"Pet-Friendly, Solar Power, Hot Tub",Apartment,Available
+50,Quiet Apartment in Magog,"Magog, QC",220,1,4.7,27,Claire Carter,"Pet-Friendly, Solar Power, Hot Tub",Apartment,Booked
 51,Spacious Penthouse in Vancouver,"Vancouver, BC",348,5,5.0,102,David M,"Pool, WiFi, AC",Penthouse,Booked
 52,Elegant Condo in Whistler,"Whistler, BC",188,1,4.8,151,Jean-Pierre Fadel,"Pool, Lake Access, City View, Garden, Rooftop Pool, Solar Power",Condo,Booked
 53,Cozy Tiny House in Whistler,"Whistler, BC",383,3,4.7,72,Rachel Bouchard,"Garden, Pet-Friendly, Ocean View, Pool",Tiny House,Booked
@@ -71,7 +71,7 @@ listing_id,name,location,price_per_night,bedrooms,rating,reviews_count,host_name
 70,Cozy Condo in Whistler,"Whistler, BC",300,4,4.7,54,Claire Fadel,"Pet-Friendly, Lake Access, Fireplace, WiFi",Condo,Booked
 71,Rustic Tiny House in Montreal,"Montreal, QC",92,1,4.5,218,Sophie Lee,"Solar Power, City View, Fireplace",Tiny House,Booked
 72,Quiet House in Tofino,"Tofino, BC",197,4,4.5,48,David Roy,"City View, AC, Hot Tub",House,Booked
-73,Cozy Farmhouse in Magog,"Magog, QC",241,3,4.3,99,Emily Dupont,"Hot Tub, WiFi, Ocean View, City View",Farmhouse,Available
+73,Cozy Farmhouse in Magog,"Magog, QC",241,3,4.3,99,Emily Dupont,"Hot Tub, WiFi, Ocean View, City View",Farmhouse,Booked
 74,Charming Penthouse in Montreal,"Montreal, QC",327,2,4.7,243,Noura Lee,"WiFi, Balcony, Fireplace",Penthouse,Booked
 75,Charming Apartment in Montreal,"Montreal, QC",376,2,4.8,236,Rachel Tremblay,"Ocean View, WiFi, Pet-Friendly, Pool, Hot Tub, Rooftop Pool",Apartment,Booked
 76,Bright Tiny House in Montreal,"Montreal, QC",331,3,4.3,193,Rachel M,"City View, WiFi, Ocean View, Compost Toilet, Rooftop Pool",Tiny House,Booked

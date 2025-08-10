@@ -1,4 +1,3 @@
-# main.py
 import json
 import re
 from agent import BookingAgent
