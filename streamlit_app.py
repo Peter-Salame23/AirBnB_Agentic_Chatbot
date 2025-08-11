@@ -1,4 +1,6 @@
 # streamlit_app.py
+from __future__ import annotations
+
 import json
 import re
 from pathlib import Path
@@ -6,9 +8,19 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+from auth import gate  # <-- Auth gate
 from agent import BookingAgent
 from recommender import Recommender
 from ui_frontend import render_recommendations  # cards with images
+
+# ---------------- UI ----------------
+st.set_page_config(page_title="Dr. House — Booking Agent", page_icon="🧳", layout="wide")
+
+# --------------- AUTH ---------------
+name, auth_status, username, authenticator = gate()
+if not auth_status:
+    st.info("Please log in above to continue.")
+    st.stop()
 
 # ---------------- Helpers & State ----------------
 def init_state():
@@ -28,7 +40,7 @@ def init_state():
     if "pending_listing_id" not in st.session_state:
         st.session_state.pending_listing_id = None
     if "selected_listing" not in st.session_state:
-        st.session_state.selected_listing = None  # store the full listing dict at selection time
+        st.session_state.selected_listing = None  # full listing dict at selection time
     if "customer" not in st.session_state:
         st.session_state.customer = {"name": None, "email": None}
     if "show_recs" not in st.session_state:
@@ -100,14 +112,17 @@ def current_listing_id():
             pass
     return None
 
-# ---------------- UI ----------------
-st.set_page_config(page_title="Dr. House — Booking Agent", page_icon="🧳", layout="wide")
+# ---------- Init after successful auth ----------
 init_state()
 
+# ---------- Sidebar ----------
 with st.sidebar:
     st.title("🧳 Dr. House — Booking Agent")
     st.caption("Chat to pick a place, then book it. Type *restart* to start over.")
     st.divider()
+
+    st.success(f"Logged in as: {name} (@{username})")
+    authenticator.logout("Logout", location="sidebar")
 
     # Reservations viewer
     res_path = Path("reservations.csv")
@@ -176,7 +191,7 @@ with st.sidebar:
             # reload recommender so it sees updated listings.csv
             st.session_state.recommender = Recommender(csv_path="listings.csv")
             say("assistant", "🧹 Reservations reset. Start fresh anytime!")
-            st.experimental_rerun()
+            st.rerun()
 
     st.divider()
     if st.button("🔄 Restart conversation"):
@@ -277,11 +292,11 @@ if user_text is not None:
 
     # ----- Stage: confirm_name -----
     elif stage == "confirm_name":
-        name = user_text.strip()
-        if not name:
+        name_in = user_text.strip()
+        if not name_in:
             say("assistant", "Please provide a **name** to continue.")
         else:
-            st.session_state.customer["name"] = name
+            st.session_state.customer["name"] = name_in
             say("assistant", "Thanks! And your **email**?")
             st.session_state.stage = "confirm_email"
 

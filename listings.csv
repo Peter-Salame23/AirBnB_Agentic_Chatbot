@@ -44,7 +44,7 @@ listing_id,name,location,price_per_night,bedrooms,rating,reviews_count,host_name
 43,Cozy Bungalow in Mont-Tremblant,"Mont-Tremblant, QC",389,5,4.7,65,Noura Roy,"Ocean View, Lake Access, Rooftop Pool, Garden, Hot Tub",Bungalow,Available
 44,Luxury House in Whistler,"Whistler, BC",220,3,4.5,140,Sophie Fadel,"Gym, BBQ, Kitchen, City View, Rooftop Pool",House,Booked
 45,Trendy Condo in Mont-Tremblant,"Mont-Tremblant, QC",144,5,4.7,193,Noura M,"Hot Tub, City View, WiFi, Compost Toilet, Balcony, Lake Access",Condo,Booked
-46,Bright Condo in Vancouver,"Vancouver, BC",209,4,4.9,139,David Bouchard,"Pool, Hot Tub, Garden, Ocean View, BBQ, AC",Condo,Available
+46,Bright Condo in Vancouver,"Vancouver, BC",209,4,4.9,139,David Bouchard,"Pool, Hot Tub, Garden, Ocean View, BBQ, AC",Condo,Booked
 47,Modern Bungalow in Tofino,"Tofino, BC",131,4,4.6,179,Omar Adams,"Ocean View, Lake Access, Solar Power",Bungalow,Booked
 48,Quiet Chalet in Tofino,"Tofino, BC",251,1,4.3,181,Noura Dupont,"Compost Toilet, Solar Power, BBQ, Kitchen",Chalet,Available
 49,Bright Condo in Toronto,"Toronto, ON",127,1,4.8,22,Sophie Tremblay,"City View, Compost Toilet, Pet-Friendly, Garden, Ocean View, Solar Power",Condo,Booked
