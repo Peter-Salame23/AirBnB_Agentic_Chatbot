@@ -21,7 +21,7 @@ credentials:
       email: moussa@example.com
       name: Moussa Salameh
       password: $2b$12$iz3KsYWpXDsWpONbvATOROo6scVgo1kEri1IB7icTcFYnR3TXrnBO
-    Stephanie:
+    stephanie:
       email: stephanie@mail.com
       failed_login_attempts: 0
       first_name: Stephanie
