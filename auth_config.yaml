@@ -13,7 +13,7 @@ credentials:
       failed_login_attempts: 0
       first_name: Lola
       last_name: Arr
-      logged_in: true
+      logged_in: false
       password: $2b$12$bqjuDHgvX6jT7Ta12ZCy.eaF2wb2efB77n2IJS0PZDDxDRLpduzIy
       password_hint: dd
       roles: null
@@ -21,6 +21,15 @@ credentials:
       email: moussa@example.com
       name: Moussa Salameh
       password: $2b$12$iz3KsYWpXDsWpONbvATOROo6scVgo1kEri1IB7icTcFYnR3TXrnBO
+    peet:
+      email: abc@mail.com
+      failed_login_attempts: 0
+      first_name: Petes
+      last_name: Sal
+      logged_in: true
+      password: $2b$12$jBcvjtimqv8yeTlRgMN8SOdseZW7Wcje/iT2lAuU3/G7x4R7z2H2K
+      password_hint: ffe
+      roles: null
     stephanie:
       email: stephanie@mail.com
       failed_login_attempts: 0

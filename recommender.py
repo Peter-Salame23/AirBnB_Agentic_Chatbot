@@ -1,4 +1,3 @@
-# recommender.py
 import pandas as pd
 import re
 from typing import List, Dict, Any, Optional
@@ -77,8 +76,10 @@ class Recommender:
             return sum(1 for p in amen_patterns if p.search(t))
 
         if "amenities" in df_pt.columns:
+            df_pt = df_pt.copy()
             df_pt["amenity_matches"] = df_pt["amenities"].apply(amenity_score)
         else:
+            df_pt = df_pt.copy()
             df_pt["amenity_matches"] = 0
 
         # 5) Guests → soft capacity via bedrooms (if column exists)
@@ -110,14 +111,23 @@ class Recommender:
         cols_present = [c for c in output_cols_priority if c in df_pt.columns]
         return df_pt.head(top_k)[cols_present].to_dict("records")
 
-    def reserve(self, listing_id: int, criteria: Dict[str, Any], customer: Dict[str, Any]) -> Dict[str, Any]:
+    def reserve(
+        self,
+        listing_id: int,
+        criteria: Dict[str, Any],
+        customer: Optional[Dict[str, Any]] = None,
+        username: Optional[str] = None,
+    ) -> Dict[str, Any]:
         """
         Reserve a listing (simple model: one-at-a-time availability).
         - listing_id: int
         - criteria: includes date_checkin, date_checkout, number_of_guests
-        - customer: {"name": "...", "email": "..."} (you can extend)
+        - customer: optional {"name": "...", "email": "..."} (we can omit; account username is primary)
+        - username: account making the reservation (for per-user filtering)
         Returns a reservation summary dict. Raises ValueError on errors.
         """
+        customer = customer or {}
+
         # 1) find listing
         rows = self.df[self.df["listing_id"] == int(listing_id)]
         if rows.empty:
@@ -152,6 +162,7 @@ class Recommender:
             "rating": row.get("rating"),
             "reviews_count": row.get("reviews_count"),
             "amenities": row.get("amenities"),
+            # Guest info is optional now; account username is the key identifier
             "guest_name": customer.get("name"),
             "guest_email": customer.get("email"),
             "date_checkin": criteria["date_checkin"],
@@ -161,6 +172,7 @@ class Recommender:
             "estimated_total": estimated_total,
             "status": "Booked",
             "created_utc": ts,
+            "username": username,
         }
 
         # 5) persist: mark listing as Booked and save CSV
@@ -168,13 +180,16 @@ class Recommender:
         self.df.at[idx, "availability"] = "Booked"
         self.df.to_csv(self.csv_path, index=False)
 
-        # 6) append to reservations.csv
+        # 6) append to reservations.csv (create headers if file empty/missing)
         try:
             try:
                 existing = pd.read_csv(self.reservations_path)
-                updated = pd.concat([existing, pd.DataFrame([reservation])], ignore_index=True)
             except FileNotFoundError:
-                updated = pd.DataFrame([reservation])
+                existing = pd.DataFrame()
+            except pd.errors.EmptyDataError:
+                existing = pd.DataFrame()
+
+            updated = pd.concat([existing, pd.DataFrame([reservation])], ignore_index=True)
             updated.to_csv(self.reservations_path, index=False)
         except Exception:
             # If writing reservations fails, still keep listing as booked; but surface a warning

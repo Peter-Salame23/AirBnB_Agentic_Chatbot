@@ -29,7 +29,7 @@ def init_state():
     if "recommender" not in st.session_state:
         st.session_state.recommender = Recommender(csv_path="listings.csv")
     if "stage" not in st.session_state:
-        # collect -> choose -> confirm_name -> confirm_email -> confirm_book -> idle
+        # collect -> choose -> confirm_book -> idle
         st.session_state.stage = "collect"
     if "messages" not in st.session_state:
         st.session_state.messages = []
@@ -41,8 +41,6 @@ def init_state():
         st.session_state.pending_listing_id = None
     if "selected_listing" not in st.session_state:
         st.session_state.selected_listing = None  # full listing dict at selection time
-    if "customer" not in st.session_state:
-        st.session_state.customer = {"name": None, "email": None}
     if "show_recs" not in st.session_state:
         st.session_state.show_recs = False  # only true when stage == "choose"
 
@@ -75,13 +73,11 @@ def try_parse_selection(user_input: str, recs):
 def hide_recs():
     st.session_state.show_recs = False
     st.session_state.last_recs = []
-    # keep selected_listing for confirmation; clear pending until selection sets it
     st.session_state.pending_listing_id = None
 
 def end_flow(msg: str):
-    # Clean up after booking/cancel so the panel can’t render again
     hide_recs()
-    st.session_state.stage = "idle"   # final state until user restarts
+    st.session_state.stage = "idle"
     say("assistant", msg + " Type **restart** to start a new search.")
 
 def reset_all():
@@ -93,11 +89,9 @@ def reset_all():
     st.session_state.last_recs = []
     st.session_state.pending_listing_id = None
     st.session_state.selected_listing = None
-    st.session_state.customer = {"name": None, "email": None}
     st.session_state.show_recs = False
 
 def current_listing_id():
-    """Return a safe listing_id from session, or None."""
     lid = st.session_state.get("pending_listing_id")
     if lid is not None:
         try:
@@ -124,27 +118,36 @@ with st.sidebar:
     st.success(f"Logged in as: {name} (@{username})")
     authenticator.logout("Logout", location="sidebar")
 
-    # Reservations viewer
+    # --- My Reservations (per-user) ---
+    st.subheader("📒 My Reservations")
     res_path = Path("reservations.csv")
-    if res_path.exists():
+    if res_path.exists() and res_path.stat().st_size > 0:
         try:
             res_df = pd.read_csv(res_path)
-            st.subheader("📒 Reservations")
-            st.dataframe(
-                res_df.sort_values("created_utc", ascending=False),
-                use_container_width=True,
-                height=280,
-            )
-            st.download_button(
-                "Download reservations.csv",
-                data=res_df.to_csv(index=False),
-                file_name="reservations.csv",
-                mime="text/csv",
-            )
+        except pd.errors.EmptyDataError:
+            res_df = pd.DataFrame()
         except Exception as e:
             st.warning(f"Could not load reservations.csv: {e}")
+            res_df = pd.DataFrame()
     else:
-        st.info("No reservations yet.")
+        res_df = pd.DataFrame()
+
+    if not res_df.empty and "username" in res_df.columns:
+        my_df = res_df[res_df["username"] == username].copy()
+    else:
+        my_df = pd.DataFrame()
+
+    if not my_df.empty:
+        my_df = my_df.sort_values("created_utc", ascending=False).reset_index(drop=True)
+        st.dataframe(my_df, use_container_width=True, height=280)
+        st.download_button(
+            "Download my reservations (CSV)",
+            data=my_df.to_csv(index=False),
+            file_name=f"my_reservations_{username}.csv",
+            mime="text/csv",
+        )
+    else:
+        st.info("No reservations yet for your account.")
 
     # Admin: reset reservations / unbook listings
     st.divider()
@@ -159,30 +162,31 @@ with st.sidebar:
         if confirm_text.strip().upper() != "CONFIRM":
             st.warning("Type CONFIRM exactly to proceed.")
         else:
-            if res_path.exists():
-                try:
-                    prev_res_df = pd.read_csv(res_path)
-                except Exception:
-                    prev_res_df = None
-                pd.DataFrame().to_csv(res_path, index=False)
+            # Clear reservations file (write empty with headers for future robustness)
+            try:
+                pd.DataFrame(columns=[
+                    "reservation_id","listing_id","name","location","property_type",
+                    "price_per_night","rating","reviews_count","amenities",
+                    "guest_name","guest_email","date_checkin","date_checkout",
+                    "number_of_guests","nights","estimated_total","status",
+                    "created_utc","username"
+                ]).to_csv(res_path, index=False)
                 st.success("reservations.csv cleared.")
-            else:
-                prev_res_df = None
-                st.info("No reservations.csv found to clear.")
+            except Exception as e:
+                st.error(f"Failed clearing reservations.csv: {e}")
 
-            if also_unbook and prev_res_df is not None and not prev_res_df.empty:
+            # Optionally unbook listings
+            if also_unbook:
                 try:
                     lst_path = Path("listings.csv")
                     if lst_path.exists():
                         lst_df = pd.read_csv(lst_path)
-                        if "listing_id" in lst_df.columns and "availability" in lst_df.columns:
-                            reserved_ids = set(prev_res_df["listing_id"].astype(str).tolist())
-                            mask = lst_df["listing_id"].astype(str).isin(reserved_ids)
-                            lst_df.loc[mask, "availability"] = "Available"
+                        if "availability" in lst_df.columns:
+                            lst_df["availability"] = "Available"
                             lst_df.to_csv(lst_path, index=False)
-                            st.success(f"Unbooked {mask.sum()} listing(s) in listings.csv.")
+                            st.success("All listings marked Available.")
                         else:
-                            st.warning("listings.csv missing required columns (listing_id / availability).")
+                            st.warning("listings.csv missing 'availability' column.")
                     else:
                         st.warning("listings.csv not found; cannot unbook listings.")
                 except Exception as e:
@@ -190,7 +194,7 @@ with st.sidebar:
 
             # reload recommender so it sees updated listings.csv
             st.session_state.recommender = Recommender(csv_path="listings.csv")
-            say("assistant", "🧹 Reservations reset. Start fresh anytime!")
+            say("assistant", "Reservations reset. Start fresh anytime!")
             st.rerun()
 
     st.divider()
@@ -206,20 +210,29 @@ render_chat()
 if st.session_state.stage == "choose" and st.session_state.last_recs and st.session_state.show_recs:
     selected_id = render_recommendations(st.session_state.last_recs, columns=3)
     if selected_id is not None:
-        # Store chosen listing now (so later steps don't depend on last_recs)
         chosen = next(
             (r for r in st.session_state.last_recs if str(r.get("listing_id")) == str(selected_id)),
             None
         )
         st.session_state.pending_listing_id = selected_id
         st.session_state.selected_listing = chosen
-        hide_recs()  # hide during identity collection
+        hide_recs()
         if chosen:
             say("assistant", f"Great choice! **{chosen.get('name')}** (ID `{chosen.get('listing_id')}`)")
-        else:
-            say("assistant", "Great choice! (Selected property)")
-        say("assistant", "Please share your **full name** for the reservation.")
-        st.session_state.stage = "confirm_name"
+        # Go straight to confirm step (no name/email prompts)
+        crit = st.session_state.last_criteria or {}
+        say(
+            "assistant",
+            (
+                "**Please confirm the reservation details:**\n"
+                f"- Listing: **{(chosen or {}).get('name','(unknown)')}** (ID `{(chosen or {}).get('listing_id','?')}`)\n"
+                f"- Location: {(chosen or {}).get('location','?')} | Type: {(chosen or {}).get('property_type','?')}\n"
+                f"- Check-in: {crit.get('date_checkin')} | Check-out: {crit.get('date_checkout')} | Guests: {crit.get('number_of_guests')}\n"
+                f"- Price per night: {(chosen or {}).get('price_per_night','?')} *(taxes/fees may apply)*\n\n"
+                "Type **yes** to confirm or **no** to cancel."
+            )
+        )
+        st.session_state.stage = "confirm_book"
         st.rerun()
 
 # ---- Chat input ----
@@ -228,7 +241,7 @@ if user_text is not None:
     # Basic commands
     if user_text.strip().lower() in {"quit", "exit"}:
         say("user", user_text)
-        end_flow("No problem—ping me anytime. Bye! 👋")
+        end_flow("No problem—ping me anytime. Bye!")
         st.rerun()
 
     if user_text.strip().lower() in {"restart", "new"}:
@@ -251,7 +264,6 @@ if user_text is not None:
 
     # ----- Stage: collect or choose (refine) -----
     if stage in {"collect", "choose"}:
-        # If we're in choose, allow quick 'book <n>' or 'book id <id>'
         if stage == "choose":
             listing_id = try_parse_selection(user_text, st.session_state.last_recs)
             if listing_id is not None:
@@ -261,15 +273,25 @@ if user_text is not None:
                     None
                 )
                 st.session_state.selected_listing = chosen
-                hide_recs()  # hide during identity collection
-                say("assistant", "Great choice! Please share your **full name** for the reservation.")
-                st.session_state.stage = "confirm_name"
+                hide_recs()
+                crit = st.session_state.last_criteria or {}
+                say(
+                    "assistant",
+                    (
+                        "**Please confirm the reservation details:**\n"
+                        f"- Listing: **{(chosen or {}).get('name','(unknown)')}** (ID `{(chosen or {}).get('listing_id','?')}`)\n"
+                        f"- Location: {(chosen or {}).get('location','?')} | Type: {(chosen or {}).get('property_type','?')}\n"
+                        f"- Check-in: {crit.get('date_checkin')} | Check-out: {crit.get('date_checkout')} | Guests: {crit.get('number_of_guests')}\n"
+                        f"- Price per night: {(chosen or {}).get('price_per_night','?')}\n\n"
+                        "Type **yes** to confirm or **no** to cancel."
+                    )
+                )
+                st.session_state.stage = "confirm_book"
                 st.rerun()
 
         # Otherwise, let the agent process user text
         agent_reply = agent.run(user_text)
         if agent_reply.strip().startswith("{") and agent_reply.strip().endswith("}"):
-            # Completed criteria => recommend
             try:
                 st.session_state.last_criteria = json.loads(agent_reply)
             except Exception:
@@ -278,7 +300,6 @@ if user_text is not None:
 
             st.session_state.last_recs = rec.recommend(st.session_state.last_criteria, top_k=5)
             if st.session_state.last_recs:
-                # Show list ONLY in the panel, not in chat (prevents re-display later)
                 say("assistant", "I found options — open the **Recommended options** panel above to review and book.")
                 st.session_state.stage = "choose"
                 st.session_state.show_recs = True
@@ -287,56 +308,7 @@ if user_text is not None:
                 st.session_state.stage = "collect"
                 st.session_state.show_recs = False
         else:
-            # The agent is asking a follow-up question
             say("assistant", agent_reply)
-
-    # ----- Stage: confirm_name -----
-    elif stage == "confirm_name":
-        name_in = user_text.strip()
-        if not name_in:
-            say("assistant", "Please provide a **name** to continue.")
-        else:
-            st.session_state.customer["name"] = name_in
-            say("assistant", "Thanks! And your **email**?")
-            st.session_state.stage = "confirm_email"
-
-    # ----- Stage: confirm_email -----
-    elif stage == "confirm_email":
-        email = user_text.strip()
-        if "@" not in email or "." not in email.split("@")[-1]:
-            say("assistant", "Could you provide a **valid email**?")
-        else:
-            st.session_state.customer["email"] = email
-
-            # Use the saved listing (never None after selection). If somehow None, recover from DF.
-            chosen = st.session_state.selected_listing
-            if not chosen:
-                try:
-                    lid = current_listing_id()
-                    if lid is not None:
-                        row = st.session_state.recommender.df[
-                            st.session_state.recommender.df["listing_id"].astype(str) == str(lid)
-                        ]
-                        chosen = row.iloc[0].to_dict() if not row.empty else {}
-                        st.session_state.selected_listing = chosen
-                    else:
-                        chosen = {}
-                except Exception:
-                    chosen = {}
-
-            crit = st.session_state.last_criteria or {}
-            say(
-                "assistant",
-                (
-                    "**Please confirm the reservation details:**\n"
-                    f"- Listing: **{chosen.get('name','(unknown)')}** (ID `{chosen.get('listing_id','?')}`)\n"
-                    f"- Location: {chosen.get('location','?')} | Type: {chosen.get('property_type','?')}\n"
-                    f"- Check-in: {crit.get('date_checkin')} | Check-out: {crit.get('date_checkout')} | Guests: {crit.get('number_of_guests')}\n"
-                    f"- Price per night: {chosen.get('price_per_night','?')} *(taxes/fees may apply)*\n\n"
-                    "Type **yes** to confirm or **no** to cancel."
-                )
-            )
-            st.session_state.stage = "confirm_book"
 
     # ----- Stage: confirm_book -----
     elif stage == "confirm_book":
@@ -353,12 +325,13 @@ if user_text is not None:
                 st.session_state.show_recs = True
                 st.rerun()
 
-            # Confirm => reserve
+            # Confirm => reserve (book under account; no name/email prompts)
             try:
                 reservation = st.session_state.recommender.reserve(
                     listing_id=lid,
                     criteria=st.session_state.last_criteria,
-                    customer=st.session_state.customer
+                    customer={},                  # no prompts needed
+                    username=username,            # key for per-user view
                 )
                 say(
                     "assistant",
@@ -377,9 +350,7 @@ if user_text is not None:
             except Exception as e:
                 say("assistant", f"Couldn't complete the reservation: {e}")
                 say("assistant", "Want to pick another option or refine filters?")
-                # keep user in choose, but do NOT show recs automatically
                 st.session_state.stage = "choose"
                 st.session_state.show_recs = False
 
-    # Persist chat on screen, then rerun to update UI
     st.rerun()

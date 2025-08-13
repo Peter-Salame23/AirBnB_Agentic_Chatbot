@@ -20,7 +20,7 @@ listing_id,name,location,price_per_night,bedrooms,rating,reviews_count,host_name
 19,Luxury Studio in Niagara Falls,"Niagara Falls, ON",124,1,4.9,41,David M,"Hot Tub, Balcony, Kitchen, Gym",Studio,Available
 20,Charming Tiny House in Montreal,"Montreal, QC",262,1,4.4,217,Claire Fadel,"Balcony, AC, WiFi, Compost Toilet, Ocean View, Lake Access",Tiny House,Available
 21,Bright Apartment in Sutton,"Sutton, QC",390,3,4.6,176,Emily M,"AC, Hot Tub, Balcony, City View, WiFi",Apartment,Available
-22,Luxury House in Montreal,"Montreal, QC",359,1,5.0,69,Emily Roy,"WiFi, Kitchen, Pool, Fireplace, City View, Solar Power",House,Booked
+22,Luxury House in Montreal,"Montreal, QC",359,1,5.0,69,Emily Roy,"WiFi, Kitchen, Pool, Fireplace, City View, Solar Power",House,Available
 23,Spacious Chalet in Montreal,"Montreal, QC",226,4,4.5,54,Rachel Lee,"Lake Access, Rooftop Pool, Compost Toilet",Chalet,Available
 24,Trendy Apartment in Magog,"Magog, QC",384,3,4.9,75,Sophie Adams,"City View, Gym, Balcony",Apartment,Available
 25,Cozy Condo in Quebec City,"Quebec City, QC",380,1,4.4,186,Emily Adams,"Pet-Friendly, Compost Toilet, Kitchen, Garden",Condo,Available

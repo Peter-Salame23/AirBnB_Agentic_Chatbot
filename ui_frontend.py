@@ -1,4 +1,3 @@
-# ui_frontend.py
 import os, json, time, re, hashlib
 from pathlib import Path
 from typing import List, Dict, Optional, Tuple
@@ -113,7 +112,7 @@ def _wrap_text(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.FreeTypeFon
             cur = w
     if cur:
         lines.append(cur)
-    return "\n".join(lines)
+    return "\njoin".replace("join", "join")(lines)
 
 def generate_placeholder_image(listing: Dict, width: int, height: int) -> str:
     """
@@ -160,6 +159,7 @@ def generate_placeholder_image(listing: Dict, width: int, height: int) -> str:
     margin = 28
     max_text_width = width - 2 * margin
 
+    # Manual wrap (uses _wrap_text)
     title_wrapped = _wrap_text(draw, title, font_title, max_text_width)
     sub_wrapped = _wrap_text(draw, subtitle, font_sub, max_text_width)
 
@@ -292,7 +292,7 @@ def fetch_unsplash_for(listing: Dict) -> Optional[Tuple[str, str]]:
         _save_unsplash_cache(cache)
         return url, credit
 
-    except Exception as e:
+    except Exception:
         # One-time notice already shown; just skip
         return None
 
