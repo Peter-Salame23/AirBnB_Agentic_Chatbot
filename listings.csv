@@ -35,7 +35,7 @@ listing_id,name,location,price_per_night,bedrooms,rating,reviews_count,host_name
 34,Cozy Penthouse in Quebec City,"Quebec City, QC",112,4,4.4,192,Jean-Pierre Roy,"City View, Solar Power, Hot Tub, AC, Ocean View",Penthouse,Available
 35,Elegant Tiny House in Toronto,"Toronto, ON",149,3,4.7,250,Hugo Carter,"Kitchen, BBQ, Compost Toilet, Fireplace",Tiny House,Available
 36,Elegant Bungalow in Quebec City,"Quebec City, QC",127,3,4.9,235,Sophie Adams,"Pool, Ocean View, Garden, Balcony",Bungalow,Available
-37,Elegant Cabin in Quebec City,"Quebec City, QC",330,4,4.7,210,Hugo Carter,"AC, Hot Tub, Compost Toilet, Rooftop Pool, Kitchen",Cabin,Available
+37,Elegant Cabin in Quebec City,"Quebec City, QC",330,4,4.7,210,Hugo Carter,"AC, Hot Tub, Compost Toilet, Rooftop Pool, Kitchen",Cabin,Booked
 38,Charming Farmhouse in Montreal,"Montreal, QC",203,1,4.4,244,Sophie Fadel,"Pool, Hot Tub, Gym",Farmhouse,Available
 39,Charming Cabin in Whistler,"Whistler, BC",89,4,4.7,99,Emily Zahid,"BBQ, Kitchen, Ocean View, City View, Solar Power",Cabin,Available
 40,Bright Chalet in Tofino,"Tofino, BC",147,2,4.7,241,Claire Zahid,"Compost Toilet, Ocean View, Fireplace, Pet-Friendly, Kitchen",Chalet,Available
@@ -72,8 +72,8 @@ listing_id,name,location,price_per_night,bedrooms,rating,reviews_count,host_name
 71,Rustic Tiny House in Montreal,"Montreal, QC",92,1,4.5,218,Sophie Lee,"Solar Power, City View, Fireplace",Tiny House,Available
 72,Quiet House in Tofino,"Tofino, BC",197,4,4.5,48,David Roy,"City View, AC, Hot Tub",House,Available
 73,Cozy Farmhouse in Magog,"Magog, QC",241,3,4.3,99,Emily Dupont,"Hot Tub, WiFi, Ocean View, City View",Farmhouse,Available
-74,Charming Penthouse in Montreal,"Montreal, QC",327,2,4.7,243,Noura Lee,"WiFi, Balcony, Fireplace",Penthouse,Available
-75,Charming Apartment in Montreal,"Montreal, QC",376,2,4.8,236,Rachel Tremblay,"Ocean View, WiFi, Pet-Friendly, Pool, Hot Tub, Rooftop Pool",Apartment,Available
+74,Charming Penthouse in Montreal,"Montreal, QC",327,2,4.7,243,Noura Lee,"WiFi, Balcony, Fireplace",Penthouse,Booked
+75,Charming Apartment in Montreal,"Montreal, QC",376,2,4.8,236,Rachel Tremblay,"Ocean View, WiFi, Pet-Friendly, Pool, Hot Tub, Rooftop Pool",Apartment,Booked
 76,Bright Tiny House in Montreal,"Montreal, QC",331,3,4.3,193,Rachel M,"City View, WiFi, Ocean View, Compost Toilet, Rooftop Pool",Tiny House,Available
 77,Trendy Chalet in Whistler,"Whistler, BC",263,3,4.5,220,Hugo Zahid,"Kitchen, Ocean View, Balcony, Compost Toilet, AC",Chalet,Available
 78,Trendy Condo in Niagara Falls,"Niagara Falls, ON",116,5,4.8,117,Claire Dupont,"Fireplace, Ocean View, Pet-Friendly, Gym, Solar Power, Kitchen",Condo,Available

@@ -8,6 +8,15 @@ credentials:
       email: demo@example.com
       name: Demo User
       password: $2b$12$kEx1fGyPGyzgY9VhkIBIBuo66a8q8iw4XCW11ARgNn4R4aeSpS2qi
+    demo_problemo:
+      email: demo@mail.com
+      failed_login_attempts: 0
+      first_name: Peter
+      last_name: Problemo
+      logged_in: false
+      password: $2b$12$E/s7fy15dx5TjB5u8Ew6/eA7yQ9BsHyhYK2k8nWhjBI4vmvpUWUhu
+      password_hint: HelloDemo
+      roles: null
     lolas:
       email: ab@mail.com
       failed_login_attempts: 0
@@ -29,6 +38,15 @@ credentials:
       logged_in: true
       password: $2b$12$jBcvjtimqv8yeTlRgMN8SOdseZW7Wcje/iT2lAuU3/G7x4R7z2H2K
       password_hint: ffe
+      roles: null
+    pete:
+      email: peter@mail.com
+      failed_login_attempts: 0
+      first_name: Peter
+      last_name: Salame
+      logged_in: true
+      password: $2b$12$o0chtui0SLYhLw7VEFINe.RMZ0vC7mwtbgDydVsHdQRZKOk.ta1gO
+      password_hint: HelloDemo1
       roles: null
     stephanie:
       email: stephanie@mail.com

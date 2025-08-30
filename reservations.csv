@@ -1,2 +1,5 @@
 reservation_id,listing_id,name,location,property_type,price_per_night,rating,reviews_count,amenities,guest_name,guest_email,date_checkin,date_checkout,number_of_guests,nights,estimated_total,status,created_utc,username
 R-22-20250813160305,22,Luxury House in Montreal,"Montreal, QC",House,359,5.0,69,"WiFi, Kitchen, Pool, Fireplace, City View, Solar Power",,,2025-08-13,2025-08-17,1,4,1436.0,Booked,20250813160305,peet
+R-75-20250814150106,75,Charming Apartment in Montreal,"Montreal, QC",Apartment,376,4.8,236,"Ocean View, WiFi, Pet-Friendly, Pool, Hot Tub, Rooftop Pool",,,2025-08-14,2025-08-17,1,3,1128.0,Booked,20250814150106,peet
+R-74-20250814162045,74,Charming Penthouse in Montreal,"Montreal, QC",Penthouse,327,4.7,243,"WiFi, Balcony, Fireplace",,,2025-08-14,2025-08-17,1,3,981.0,Booked,20250814162045,peet
+R-37-20250827180007,37,Elegant Cabin in Quebec City,"Quebec City, QC",Cabin,330,4.7,210,"AC, Hot Tub, Compost Toilet, Rooftop Pool, Kitchen",,,2025-08-28,2025-08-31,1,3,990.0,Booked,20250827180007,pete
